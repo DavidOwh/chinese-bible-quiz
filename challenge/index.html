@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6b4f2a">
+  <meta name="description" content="一起认识圣经 Version 2：按程度、书卷和主题学习圣经。">
+  <title>一起认识圣经・挑战版</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="../icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="../" style="position:fixed;right:14px;bottom:96px;z-index:999;padding:10px 14px;border-radius:999px;background:#244936;color:#fff;text-decoration:none;font:700 15px/1.2 system-ui;box-shadow:0 8px 20px rgba(0,0,0,.18)">← 选择版本</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-action="home" aria-label="回到首页">
+        <img src="../icon-192.png" alt="">
+        <span><strong>一起认识圣经・挑战版</strong><small>深入学习</small></span>
+      </button>
+      <div class="top-actions">
+        <button id="autoReadToggle" class="soft-btn" type="button">自动朗读：关</button>
+        <button id="fontToggle" class="soft-btn" type="button">长者大字</button>
+        <button id="installBtn" class="soft-btn hidden" type="button">安装应用</button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="主要功能">
+      <button data-nav="home" class="active"><span>⌂</span>首页</button>
+      <button data-nav="learn"><span>▦</span>分类学习</button>
+      <button data-nav="review"><span>↻</span>错题复习</button>
+      <button data-nav="progress"><span>✓</span>我的进度</button>
+    </nav>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

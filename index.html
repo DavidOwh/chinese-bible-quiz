@@ -1,118 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="圣经问答">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#6b4f2a" />
-  <title>一起认识圣经｜Bible Quiz</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#244936">
+  <meta name="description" content="一起认识圣经：选择轻松版或挑战版，在问答中认识上帝的话。">
+  <title>一起认识圣经</title>
+  <link rel="icon" href="icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles-v2.1.css">
 </head>
 <body>
-  <main class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">华文圣经学习</p>
-        <h1>一起认识圣经</h1>
-        <p class="subtitle">从入门到挑战，在问答中认识上帝的话。</p>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="brand-row">
+        <img src="icon-192.png" alt="一起认识圣经图标">
+        <div>
+          <p class="eyebrow">华文圣经学习</p>
+          <h1>一起认识圣经</h1>
+        </div>
       </div>
-      <button id="seniorToggle" class="icon-btn" aria-pressed="false">长者大字模式</button>
+      <p class="hero-copy">请选择适合你的学习方式。无论轻松学习或接受挑战，都让我们每天多认识一点上帝的话。</p>
+      <div class="verse">“你的话是我脚前的灯，是我路上的光。”<span>诗篇 119:105</span></div>
     </header>
 
-    <section id="homeScreen" class="screen active">
-      <div class="welcome-card">
-        <div>
-          <span class="badge">每日学习 · 随时复习</span>
-          <h2>今天要挑战哪一个程度？</h2>
-          <p>每题有四个选项。作答后会显示正确答案、简单解释和经文出处。</p>
-        </div>
-        <div class="streak-box">
-          <strong id="streakCount">0</strong>
-          <span>连续学习天数</span>
-        </div>
+    <section class="choice-section" aria-labelledby="choose-title">
+      <div class="section-heading">
+        <p class="eyebrow dark">选择学习方式</p>
+        <h2 id="choose-title">今天你想怎样学习？</h2>
       </div>
 
-      <div id="levelGrid" class="level-grid"></div>
+      <div class="choice-grid">
+        <article class="mode-card easy-card">
+          <div class="mode-top">
+            <span class="mode-icon">🌿</span>
+            <span class="mode-label">轻松学习</span>
+          </div>
+          <h3>一起认识圣经・轻松版</h3>
+          <p class="audience">适合初信者、年长者，以及喜欢慢慢学习的弟兄姊妹。</p>
+          <ul>
+            <li>大字体、大按钮，一题一页</li>
+            <li>没有计时，不造成压力</li>
+            <li>语音朗读、每日一题</li>
+            <li>每题附简单解释与经文出处</li>
+          </ul>
+          <a class="enter-btn easy-btn" href="easy/">进入轻松版 <span>→</span></a>
+        </article>
 
-      <div class="action-grid">
-        <button id="dailyBtn" class="secondary-card">
-          <span class="card-icon">☀</span>
-          <span><strong>每日一题</strong><small>完成今天的圣经挑战</small></span>
-        </button>
-        <button id="reviewBtn" class="secondary-card">
-          <span class="card-icon">↻</span>
-          <span><strong>错题复习</strong><small id="wrongCountLabel">目前没有错题</small></span>
-        </button>
-        <button id="progressBtn" class="secondary-card">
-          <span class="card-icon">✓</span>
-          <span><strong>我的进度</strong><small>查看得分与学习情况</small></span>
-        </button>
+        <article class="mode-card challenge-card">
+          <div class="mode-top">
+            <span class="mode-icon">🏆</span>
+            <span class="mode-label">深入挑战</span>
+          </div>
+          <h3>一起认识圣经・挑战版</h3>
+          <p class="audience">适合青年、成人、小组，以及希望更深入认识圣经的人。</p>
+          <ul>
+            <li>按难度、书卷和主题选择</li>
+            <li>更多题目与深入解释</li>
+            <li>本周讲道问答与错题复习</li>
+            <li>学习进度、表现分析与连续记录</li>
+          </ul>
+          <a class="enter-btn challenge-btn" href="challenge/">进入挑战版 <span>→</span></a>
+        </article>
       </div>
     </section>
 
-    <section id="quizScreen" class="screen">
-      <div class="quiz-head">
-        <button id="backBtn" class="text-btn">← 返回首页</button>
-        <div class="quiz-meta">
-          <span id="quizLevel">入门级</span>
-          <span id="questionCounter">1 / 10</span>
-        </div>
+    <section class="how-card">
+      <div>
+        <p class="eyebrow dark">使用方法</p>
+        <h2>不需要注册，打开就能学习</h2>
       </div>
-
-      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
-
-      <article class="question-card">
-        <div class="question-tools">
-          <span id="questionCategory" class="badge">圣经人物</span>
-          <button id="speakBtn" class="icon-btn">🔊 朗读题目</button>
-        </div>
-        <h2 id="questionText"></h2>
-        <div id="answers" class="answers"></div>
-      </article>
-
-      <article id="explanationBox" class="explanation hidden" aria-live="polite">
-        <h3 id="resultTitle"></h3>
-        <p id="explanationText"></p>
-        <p class="reference"><strong>经文出处：</strong><span id="referenceText"></span></p>
-        <p id="reflectionText" class="reflection hidden"></p>
-        <button id="nextBtn" class="primary-btn">下一题</button>
-      </article>
-    </section>
-
-    <section id="resultScreen" class="screen">
-      <article class="result-card">
-        <p class="eyebrow">挑战完成</p>
-        <h2 id="resultHeading">做得很好！</h2>
-        <div class="score-ring"><span id="scoreValue">0%</span></div>
-        <p id="scoreDetail"></p>
-        <div id="resultMessage" class="encouragement"></div>
-        <div class="result-actions">
-          <button id="retryBtn" class="primary-btn">再挑战一次</button>
-          <button id="resultHomeBtn" class="outline-btn">回到首页</button>
-        </div>
-      </article>
-    </section>
-
-    <section id="progressScreen" class="screen">
-      <div class="quiz-head">
-        <button id="progressBackBtn" class="text-btn">← 返回首页</button>
-        <h2>我的学习进度</h2>
+      <div class="steps">
+        <div><strong>1</strong><span>选择版本</span></div>
+        <div><strong>2</strong><span>选择答案</span></div>
+        <div><strong>3</strong><span>阅读解释</span></div>
       </div>
-      <div id="statsGrid" class="stats-grid"></div>
-      <article class="progress-summary">
-        <h3>学习建议</h3>
-        <p id="progressAdvice"></p>
-      </article>
     </section>
+
+    <footer>
+      <p>愿我们在问答中认识圣经，在生活中遵行主道。</p>
+      <small>学习进度只保存在使用者自己的装置中</small>
+    </footer>
   </main>
-
-  <footer>Church-friendly prototype · 数据只保存在这台装置</footer>
-  <script src="app.js"></script>
 </body>
 </html>
